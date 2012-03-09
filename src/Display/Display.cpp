@@ -1,8 +1,6 @@
 #include "Display.hpp"
 
 Display::Display () {
-	if (SDL_Init( SDL_INIT_EVERYTHING ) == -1)
-		return;
 	screenWidth = 640;
 	screenHeight = 480;
 	screenBpp = 32;
@@ -19,7 +17,7 @@ Display::Display () {
 int Display::update() {
 	for (unsigned i=0; i < objects.size(); i++) {
     		apply_surface (0, 0, objects[i], screen);
-}
+	}
 	SDL_Flip(screen);
 }
 void Display::quit() {
