@@ -4,12 +4,15 @@
 using namespace std;
 
 class Display {
-	private:
-		int SCREEN_WIDTH;
-		int SCREEN_HEIGHT;
-		int SCREEN_BPP;
-		vector<SDL_Surface> objects;	
 	public:
+		int screenWidth;
+		int screenHeight;
+		int screenBpp;
+		SDL_Surface * screen;
+		vector<SDL_Surface*> objects;	
+	
 		Display ();
+		int update();
+		void quit();
 		
 };
