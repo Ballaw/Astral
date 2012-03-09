@@ -3,18 +3,18 @@ CFLAGS=-Wall
 INCLUDE_DIR=-I./inc
 AR=
 LIBS=-lSDL -lSDL_image
-SOURCES=./src/demo.cpp
+SOURCES=./src/Astral_OnEvent.cpp ./src/Astral_OnLoop.cpp ./src/Astral_OnCleanup.cpp ./src/Astral_OnInit.cpp ./src/Astral_OnRender.cpp ./src/Astral.cpp
 ASOBJECTS=$(ASSOURCES:.s=.o)
 OBJECTS=$(SOURCES:.cpp=.o)
-TARGET=demo
+TARGET=Astral
 
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(CC) -o $(TARGET) $(OBJECTS) $(LIBS)
 
-%.o: %.cc
-	$(CC) -c -o $@ $< $(INCLUDE_DIR) $(CFLAGS)
+.cpp.o:
+	$(CC) -c $(CFLAGS) $(INCLUDE_DIR) -o $@ $<
 
 clean:
 	rm -rf $(OBJECTS) $(TARGET)
