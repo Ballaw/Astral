@@ -1,0 +1,24 @@
+CC=g++
+CFLAGS=-Wall
+INCLUDE_DIR=-I./inc
+AR=
+LIBS=-lSDL -lSDL_image
+SOURCES=./src/demo.cpp
+ASOBJECTS=$(ASSOURCES:.s=.o)
+OBJECTS=$(SOURCES:.cpp=.o)
+TARGET=demo
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(CC) -o $(TARGET) $(OBJECTS) $(LIBS)
+
+%.o: %.cc
+	$(CC) -c -o $@ $< $(INCLUDE_DIR) $(CFLAGS)
+
+clean:
+	rm -rf $(OBJECTS) $(TARGET)
+
+
+#g++ demo.cpp -o demo -lSDL -lSDL_image
+
