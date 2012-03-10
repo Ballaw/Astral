@@ -1,12 +1,12 @@
-DIR = $(CURDIR)/
+DIR = ./
 SRCDIR = $(DIR)src/
 OBJDIR = $(DIR)obj/
 BINDIR = $(DIR)bin/
-INC = -I$(DIR)inc/
-LIB = -lSDL -lSDL_image
+INC = -I$(SRCDIR) -I$(SRCDIR)Display -I$(DIR)inc
+LIB = -lSDL -lSDL_image -
 CXX = g++
 
-VPATH = $(SRCDIR):$(SRCDIR)/Display
+VPATH = $(SRCDIR):$(SRCDIR)Display
 SOURCES= SDLFunctions.cpp Display.cpp Astral_OnEvent.cpp Astral_OnLoop.cpp Astral_OnCleanup.cpp Astral_OnInit.cpp Astral_OnRender.cpp Astral.cpp
 
 OBJECTS=$(SOURCES:%.cpp=$(OBJDIR)%.o)
