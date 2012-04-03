@@ -6,8 +6,8 @@ INC = -I$(SRCDIR) -I$(SRCDIR)Display -I$(DIR)inc
 LIB = -lSDL -lSDL_image
 CXX = g++
 
-VPATH = $(SRCDIR):$(SRCDIR)Display
-SOURCES= SDLFunctions.cpp Display.cpp Astral_OnEvent.cpp Astral_OnLoop.cpp Astral_OnCleanup.cpp Astral_OnInit.cpp Astral_OnRender.cpp Astral.cpp
+VPATH = $(SRCDIR):$(SRCDIR)Display:$(SRCDIR)Environment
+SOURCES= SDLFunctions.cpp Display.cpp Astral_OnEvent.cpp Astral_OnLoop.cpp Astral_OnCleanup.cpp Astral_OnInit.cpp Astral_OnRender.cpp Astral.cpp Environment.cpp
 
 OBJECTS=$(SOURCES:%.cpp=$(OBJDIR)%.o)
 
