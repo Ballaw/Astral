@@ -3,7 +3,7 @@ SRCDIR = $(DIR)src/
 OBJDIR = $(DIR)obj/
 BINDIR = $(DIR)bin/
 INC = -I$(SRCDIR) -I$(SRCDIR)Display -I$(DIR)inc
-LIB = -lSDL -lSDL_image -
+LIB = -lSDL -lSDL_image
 CXX = g++
 
 VPATH = $(SRCDIR):$(SRCDIR)Display

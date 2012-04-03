@@ -15,11 +15,13 @@ Display::Display () {
 		return;
 }
 int Display::update() {
-	for (unsigned i=0; i < objects.size(); i++) {
-    		apply_surface (0, 0, objects[i], screen);
-	}
+	
+	BOOST_FOREACH( SDL_Surface * t, objects )
+   	{
+        	apply_surface (0, 0, t, screen);
+   	}
 	SDL_Flip(screen);
 }
 void Display::quit() {
-	SDL_Quit();
+	
 }

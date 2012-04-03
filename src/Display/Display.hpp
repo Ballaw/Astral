@@ -1,5 +1,6 @@
 #include "SDLFunctions.hpp"
 #include <vector>
+#include <boost/foreach.hpp>
 
 using namespace std;
 
